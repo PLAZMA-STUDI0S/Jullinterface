@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jullinterface</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1 id="appTitle">Jullinterface Editor</h1>
+        
+        <!-- Toolbar with buttons -->
+        <div class="toolbar">
+            <button onclick="boldText()" id="boldBtn">Bold</button>
+            <button onclick="italicText()" id="italicBtn">Italic</button>
+            <button onclick="underlineText()" id="underlineBtn">Underline</button>
+            <button onclick="changeFontSize()" id="fontSizeBtn">Font Size</button>
+            <button onclick="changeFontColor()" id="fontColorBtn">Font Color</button>
+        </div>
+
+        <!-- Text area -->
+        <div id="editor" contenteditable="true">
+            <p>Type your text here...</p>
+        </div>
+
+        <!-- File operations -->
+        <button id="saveBtn">Save Text</button>
+        <button id="loadBtn">Load Text</button>
+        <input type="file" id="fileInput" style="display:none;">
+
+        <!-- Settings button -->
+        <button id="settingsBtn">Settings</button>
+    </div>
+
+    <!-- Settings Panel -->
+    <div id="settingsPanel" class="settings-panel">
+        <h3 id="settingsTitle">Settings</h3>
+        
+        <!-- Font Settings -->
+        <label for="fontSelect" id="fontLabel">Font Family:</label>
+        <select id="fontSelect">
+            <option value="Arial">Arial</option>
+            <option value="Courier New">Courier New</option>
+            <option value="Times New Roman">Times New Roman</option>
+            <option value="Georgia">Georgia</option>
+        </select>
+        <br>
+        
+        <!-- Font Size -->
+        <label for="fontSizeSelect" id="fontSizeLabel">Font Size:</label>
+        <select id="fontSizeSelect">
+            <option value="14px">14px</option>
+            <option value="16px">16px</option>
+            <option value="18px">18px</option>
+            <option value="20px">20px</option>
+            <option value="22px">22px</option>
+            <option value="24px">24px</option>
+        </select>
+        <br>
+
+        <!-- Line Height -->
+        <label for="lineHeightSelect" id="lineHeightLabel">Line Height:</label>
+        <select id="lineHeightSelect">
+            <option value="1.2">1.2</option>
+            <option value="1.5">1.5</option>
+            <option value="1.8">1.8</option>
+            <option value="2">2.0</option>
+        </select>
+        <br>
+
+        <!-- Font Color -->
+        <label for="textColor" id="textColorLabel">Text Color:</label>
+        <input type="color" id="textColor" value="#000000">
+        <br>
+
+        <!-- Background Color -->
+        <label for="backgroundColor" id="bgColorLabel">Background Color:</label>
+        <input type="color" id="backgroundColor" value="#ffffff">
+        <br>
+
+        <!-- Font Weight -->
+        <label for="fontWeight" id="fontWeightLabel">Font Weight:</label>
+        <select id="fontWeight">
+            <option value="normal">Normal</option>
+            <option value="bold">Bold</option>
+            <option value="lighter">Lighter</option>
+        </select>
+        <br>
+
+        <!-- Margin and Padding -->
+        <label for="marginPadding" id="marginPaddingLabel">Margin/Padding:</label>
+        <input type="number" id="marginPadding" placeholder="0px">
+        <br>
+
+        <!-- Text Box Size -->
+        <label for="textBoxSize" id="textBoxSizeLabel">Text Box Size:</label>
+        <input type="number" id="textBoxSize" placeholder="400px">
+        <br>
+
+        <!-- Text Shadow -->
+        <label for="textShadow" id="textShadowLabel">Text Shadow:</label>
+        <input type="text" id="textShadow" placeholder="2px 2px 4px #000000">
+        <br>
+
+        <!-- Text Alignment -->
+        <label for="textAlign" id="textAlignLabel">Text Alignment:</label>
+        <select id="textAlign">
+            <option value="left">Left</option>
+            <option value="center">Center</option>
+            <option value="right">Right</option>
+        </select>
+        <br>
+
+        <!-- Language selection -->
+        <label for="languageSelect" id="languageLabel">Language:</label>
+        <select id="languageSelect" onchange="changeLanguage()">
+            <option value="en">English</option>
+            <option value="tr">Türkçe</option>
+            <option value="es">Español</option>
+            <option value="de">Deutsch</option>
+        </select>
+
+        <button id="applySettingsBtn">Apply Settings</button>
+        <button id="closeSettingsBtn">Close</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
